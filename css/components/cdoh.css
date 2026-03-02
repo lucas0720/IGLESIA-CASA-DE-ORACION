@@ -1,0 +1,109 @@
+/* ==================== SECCIÓN CDOH (MODO CLARO) ==================== */
+.cdoh {
+
+    background-color: var(--color-gris-claro); 
+    width: 100%;
+    scroll-margin-top: 5.68rem;
+}
+
+.cdoh__container {
+
+    color: var(--color-gris-oscuro);
+    display: flex;
+    width:100%;
+    align-items: stretch;
+    padding: 4rem 3% 4rem 3%;
+}
+
+.cdoh__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+    font-size: 1.5rem;
+    gap: 2rem;
+    padding-right: 3rem;
+    text-align: justify;
+
+    color: var(--color-gris-oscuro);
+
+    .cdoh__title {
+        font-size: clamp(5rem, 8vw, 6.2rem);
+        margin: 0;
+        line-height: 0.8;
+        flex-shrink: 0;
+       
+        text-transform: uppercase;
+    }
+}
+
+.cdoh__carrusel {
+    position: relative;     
+    width: 50%;    
+    display: flex;
+    flex-direction: column;  
+    padding-left: 1.5rem;      
+}
+
+.cdoh__carrusel--container {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem; 
+}
+
+.cdoh__list {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out; 
+}
+
+.cdoh__item {
+    min-width: 100%; 
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    padding: 0; 
+
+    img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 4/3;
+     
+        object-fit: cover; 
+        display: block;
+        border-radius: 1rem;
+     
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
+    }
+}
+
+/* =========================================
+   RESPONSIVE (CELULAR)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .cdoh__container {
+        flex-direction: column;
+        padding: 3rem 1.5rem;
+        align-items: center;
+    }
+
+    .cdoh__text {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+    
+    .cdoh__carrusel {
+        width: 100%;
+        height: 400px;
+        padding-left: 0rem; 
+    }
+
+    .cdoh__item img {
+        aspect-ratio: 4/3; 
+    }
+}

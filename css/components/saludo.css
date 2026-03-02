@@ -1,0 +1,106 @@
+.saludo{
+    /* 3. TIPOGRAFÍA*/
+    color: var(--color-gris-claro);
+    /*VISUAL*/
+    background-color: var(--color-gris-oscuro);
+
+    /*OTHERS*/
+    overflow: hidden;
+    user-select: none;
+    
+}
+.saludo__container{
+    padding: 10% 3%;
+}
+.saludo__flex{
+   /*POSITION*/
+   display: flex;
+   gap: 3rem;
+
+   .saludo__text{
+        /*POSITON*/
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        flex: 1;
+
+        /*TIPOGRAFIA*/
+        text-align: justify;
+        line-height: 1.6;
+        font-size: 0.9rem;
+
+        .saludo__title{
+            font-size: clamp(3.1rem, 9vw, 6.2rem);
+            font-weight: 900;
+            margin: 0;
+            line-height: 0.9;
+            flex-shrink: 0;
+
+        }
+        span {
+            display: block;
+            font-weight: bold; 
+            margin-top: 0.5rem;
+        }
+   }
+
+    .saludo__img{
+        /*POSITION*/
+        position: relative;
+        flex: 1;
+
+        /*VISUAL*/
+        border-radius: 1rem; 
+        overflow: hidden;
+
+        .saludo__mask {
+            /* 1. La convertimos en una capa flotante */
+            position: absolute;
+            inset: 0; 
+            background-color: rgba(0, 0, 0, 0.25); 
+            z-index: 1; 
+            transition: background-color 0.3s ease;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover; 
+            /* La imagen se queda en la capa base */
+            z-index: 0; 
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .saludo__container {
+        padding: 10% 10%;
+
+        .saludo__title {
+            font-size: clamp(3.1rem, 15vw, 4rem);
+            text-align: center;
+            margin-bottom: 2rem;
+            line-height: 1;
+        }
+
+        .saludo__flex {
+            flex-direction: column; 
+            align-items: center;
+            gap: 3rem;
+
+            .saludo__text {
+                width: 100%;
+            }
+
+               .saludo__img{
+        /*POSITION*/
+        flex: 1;
+
+        img{
+            aspect-ratio: 2/3;
+        }
+    }
+        }
+    }
+}

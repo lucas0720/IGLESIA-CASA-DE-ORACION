@@ -1,0 +1,19 @@
+/* 1. Base */
+@import './base/reset.css';
+@import './base/variables.css';
+
+
+/* 2. Layout */
+@import './layout/header.css';
+@import './layout/footer.css';
+
+/* 3. Components */
+
+@import './components/hero.css';
+@import './components/services.css';
+@import './components/mision&pilares.css';
+@import './components/vision.css';
+@import './components/cdoh.css';
+@import './components/saludo.css';
+@import './components/somos.css';
+@import './components/boton.css';

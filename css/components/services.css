@@ -1,0 +1,204 @@
+.services {
+    /* 1. Invertimos el fondo a oscuro y el texto a claro */
+    background-color: var(--color-gris-oscuro);
+    color: var(--color-gris-claro);
+    
+    overflow: hidden;
+    scroll-margin-top: 5.68rem;
+    user-select: none;
+}
+
+.services__container {
+    display: grid;
+    grid-template-columns: auto 1.7fr 2fr;
+    padding: 2rem 0;
+    gap: 4.3rem;
+
+    .services__title {
+        font-size: 6.2rem;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        /* Color claro para el título vertical */
+        color: var(--color-gris-claro); 
+    }
+
+    .services__images {
+        position: relative;
+        margin-bottom: 3rem;
+        
+        .services__figure{
+            position: absolute;
+            overflow: hidden;
+            border-radius: 2rem;
+            aspect-ratio: 3/4;
+            max-width: 16rem;
+            /* Le damos un poco más de opacidad a la sombra para que se note en el fondo oscuro */
+            box-shadow: 0 10px 60px rgba(0, 0, 0, 0.9);
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .services__figure--back{
+            z-index: 1;
+            top: 0;
+            left: 0;
+            margin-right: 6rem;
+        }
+
+        .services__figure--front{
+            z-index: 2;
+            bottom: 0;
+            right: 0;
+            margin-left: 6rem;
+        }
+    }
+
+    .services__data {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 4rem; 
+
+        margin: 3rem 0rem 0rem 0;
+
+        .services__time, .services__address {
+            display: flex;
+            flex-direction: column; 
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .services__time{
+            align-items: flex-start;
+            text-align: left;
+            font-size: 4rem;
+            /* 2. Invertimos la hora a AMARILLO para que resalte en el fondo oscuro */
+            color: var(--color-amarillo);
+        }
+
+        .services__address{
+            align-items: flex-end;  
+            text-align: right;
+            font-size: 2.3rem;
+            display: flex;
+            gap: 2rem;
+            /* Color blanco para que la dirección se lea perfecto */
+            color: var(--color-white); 
+        }
+
+        .services__span {
+            font-size: 2rem; 
+        }
+
+        .service__button {
+            margin-top: 1.5rem;
+            text-align: right;
+        }
+
+        .services__btn {
+            display: inline-block; 
+            /* 3. Invertimos el botón: Fondo amarillo y texto negro */
+            background-color: var(--color-amarillo);
+            color: var(--color-negro); 
+            
+            padding: 1rem 2.5rem; 
+            border-radius: 2rem; 
+            
+            font-size: 1.1rem;
+            font-weight: 800; /* Un poco más de peso para que resalte */
+            text-transform: uppercase;
+            text-decoration: none;
+            
+            /* Sombra más sutil adaptada al modo oscuro */
+            box-shadow: 0 4px 15px rgba(229, 193, 32, 0.2);
+            transition: all 0.3s ease; 
+        }
+
+        .services__btn:hover {
+            transform: translateY(-3px); 
+            /* Sombra amarilla más fuerte al hacer hover */
+            box-shadow: 0 6px 20px rgba(229, 193, 32, 0.4); 
+            background-color: var(--color-white); /* Pequeño destello al blanco */
+        }
+    }
+}
+
+/* ==================== MEDIA QUERIES (SIN CAMBIOS) ==================== */
+@media screen and (max-width: 1000px) {
+    .services__container {
+        display: grid;
+        grid-template-columns: 1.7fr 2fr;
+        grid-template-rows: auto auto;
+        padding: 0 1.5rem 3.4rem 1.5rem;
+        column-gap: 4.3rem;
+        row-gap: 0;
+        text-align: center;
+
+        .services__title {
+            grid-column: 1/span 2;
+            writing-mode: horizontal-tb;
+            transform: none;
+            color: var(--color-amarillo); /* En móvil, el título horizontal suele verse mejor en amarillo */
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services__container {
+        grid-template-columns: minmax(0 , 1fr);
+      
+        padding: 0 1.5rem 3.4rem 1.5rem;
+        gap: 0rem; 
+        column-gap: 0rem;
+
+        .services__title {
+            grid-row: 1;
+            width: fit-content;
+            justify-self: center;
+            font-size: clamp(2.5rem, 18vw, 6.2rem);
+            white-space: nowrap;
+        }
+
+        .services__images {
+            justify-self: center;
+            max-width: 30rem;
+            grid-row: 2;
+            width: 100%;
+            min-height: 31rem; 
+            
+            margin: 2rem 0;
+            
+            .services__figure--back{
+               margin-right: 4rem;
+            }
+
+            .services__figure--front{
+                margin-left: 4rem;
+            }
+        }
+
+        .services__data {
+            grid-row: 3;
+            gap: 3rem;
+            margin:0;
+
+            .services__time{
+                font-size: clamp(2.5rem, 13vw, 4rem);
+            }
+
+            .services__address{
+                font-size: clamp(1rem, 10vw, 2rem);
+            }
+
+            .services__span{
+                font-size: clamp(1rem, 10vw, 2rem);
+            }
+        }
+    }
+}

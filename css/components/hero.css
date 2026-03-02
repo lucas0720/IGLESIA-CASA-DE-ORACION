@@ -1,0 +1,201 @@
+
+
+.hero{
+    /*POSITION*/
+    position: relative;
+
+    /*BOX*/
+    width: 100%;
+    height: 100vh;
+
+    /*OTHERS*/
+    overflow: hidden;
+    user-select: none;
+}
+
+.hero__background{
+    /*POSITION*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    
+    /*BOX*/
+    width: 100%;
+    height: 100%;
+
+    .hero__mask{
+        /*POSITION*/
+        position: absolute;
+        z-index: 2;
+
+        /*BOX*/
+        width: 100%;
+        height: 100%;
+    
+        /*VISUALS*/
+        background-color: #0000008c; 
+    }
+
+    .hero__image{
+        /*POSITION*/
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+
+        /*BOX*/
+        width: 100%;
+        height: 100%;
+
+        /*VISUALS*/
+        object-fit: cover; 
+        object-position: center;
+    }
+}
+
+.hero__container{
+    /* POSITION */
+    position:relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* BOX */
+    height: 100%;
+    padding: 0rem 3%;
+    .hero__logo{
+
+        /* BOX */
+        width: 100%;
+
+        max-width: 450px;
+        height: auto;
+    }
+    
+}
+
+/**/
+.carrusel{
+    /*POSITION*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    /* BOX */
+    width: 100%;    
+    /* 4. VISUALES*/
+    background-color:var(--color-negro) ;
+    
+}
+
+.carrusel__container {
+
+    /*BOX*/
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+     
+    /*OTROS*/
+    overflow: hidden;
+
+    .carrusel__list{
+        /*POSITION*/
+        display: flex;
+
+        /* BOX */
+        width: 100%;
+        height: 100%;
+        
+        /*ANIMACIONES*/
+        transition: transform 1s ease-in-out; 
+
+        .item{
+            /*POSITION*/
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+            /* 2. BOX */
+            width: 100%;
+            padding: 1rem 3%;
+            
+            p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                color: var(--color-gris-claro); 
+                font-weight: 600;
+                text-align: center;
+                
+                strong {
+                    padding-top: 1rem;
+                    display: block;
+                    color: var(--color-amarillo); 
+                    font-size: 1.2rem;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+            }
+        }
+        
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+
+        height: auto; 
+        min-height: 100dvh;
+        max-height: none;  
+        
+        overflow: hidden; 
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero__container {
+        min-height: 100dvh; 
+        height: auto;
+
+
+        .hero__picture {
+            margin-bottom: 0 !important; 
+        }
+    }
+
+    .carrusel {
+        position: relative; 
+        bottom: auto;
+        left: auto;
+    }
+
+    .carrusel__container {
+        overflow: hidden;
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        
+        .carrusel__list {
+            display: flex;
+            width: 100%;
+            transition: transform 1s ease-in-out; 
+
+            
+            .item {
+                padding: 1rem 3%;
+
+                p{
+                    text-align: justify;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,174 @@
+/* ==================== BOTÓN FLOTANTE ==================== */
+.btn-chat {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 998; /* Para que flote sobre todo */
+    
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    
+    background-color: var(--color-amarillo);
+    color: var(--color-negro);
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-chat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(229, 193, 32, 0.4);
+}
+
+/* ==================== VENTANA DE CHAT ==================== */
+.ventana-chat {
+    position: fixed;
+    bottom: 6rem; /* Se ubica justo arriba del botón */
+    right: 2rem;
+    z-index: 999;
+    
+    width: 350px;
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    
+    /* ESTADO INICIAL (OCULTO CON ANIMACIÓN) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ESTA CLASE SE AGREGA CON JAVASCRIPT PARA MOSTRARLA */
+.ventana-chat.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+/* --- Cabecera del Chat --- */
+.ventana-chat__header {
+    background-color: var(--color-gris-oscuro);
+    color: var(--color-amarillo);
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ventana-chat__header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.btn-cerrar-chat {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.btn-cerrar-chat:hover {
+    color: var(--color-amarillo);
+}
+
+.ventana-chat__body {
+    padding: 1.5rem;
+}
+
+.ventana-chat__body p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.form-contacto__group {
+    margin-bottom: 1rem;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+    border-color: var(--color-amarillo);
+}
+
+.btn-enviar-chat {
+    width: 100%;
+    background-color: var(--color-gris-oscuro);
+    color: var(--color-white);
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar-chat:hover {
+    background-color: var(--color-amarillo);
+    color: var(--color-negro);
+}
+
+
+@media screen and (max-width: 400px) {
+    .ventana-chat {
+        width: calc(100% - 4rem);
+        right: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ventana-chat {
+        width: 100%;
+        height: 100dvh; 
+        bottom: 0;
+        right: 0;
+        top: 0;
+        left: 0;
+        
+        
+        border-radius: 0; 
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ventana-chat__body {
+    
+        flex-grow: 1; 
+        overflow-y: auto; 
+        padding: 2rem 1.5rem; 
+    }
+    
+    .btn-enviar-chat {
+        padding: 1.2rem;
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+    }
+}
