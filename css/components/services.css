@@ -1,5 +1,5 @@
 .services {
-    /* 1. Invertimos el fondo a oscuro y el texto a claro */
+  
     background-color: var(--color-gris-oscuro);
     color: var(--color-gris-claro);
     
@@ -11,14 +11,14 @@
 .services__container {
     display: grid;
     grid-template-columns: auto 1.7fr 2fr;
-    padding: 2rem 0;
+    padding: 2rem 3% 2rem 0rem;
     gap: 4.3rem;
 
     .services__title {
         font-size: 6.2rem;
         writing-mode: vertical-rl;
         transform: rotate(180deg);
-        /* Color claro para el título vertical */
+     
         color: var(--color-gris-claro); 
     }
 
@@ -32,7 +32,7 @@
             border-radius: 2rem;
             aspect-ratio: 3/4;
             max-width: 16rem;
-            /* Le damos un poco más de opacidad a la sombra para que se note en el fondo oscuro */
+            
             box-shadow: 0 10px 60px rgba(0, 0, 0, 0.9);
 
             img{
@@ -63,7 +63,7 @@
         flex-direction: column;
         gap: 4rem; 
 
-        margin: 3rem 0rem 0rem 0;
+        margin: 3rem 0rem 0rem 0rem;
 
         .services__time, .services__address {
             display: flex;
@@ -78,7 +78,7 @@
             align-items: flex-start;
             text-align: left;
             font-size: 4rem;
-            /* 2. Invertimos la hora a AMARILLO para que resalte en el fondo oscuro */
+            
             color: var(--color-amarillo);
         }
 
@@ -88,7 +88,7 @@
             font-size: 2.3rem;
             display: flex;
             gap: 2rem;
-            /* Color blanco para que la dirección se lea perfecto */
+
             color: var(--color-white); 
         }
 
@@ -103,7 +103,7 @@
 
         .services__btn {
             display: inline-block; 
-            /* 3. Invertimos el botón: Fondo amarillo y texto negro */
+   
             background-color: var(--color-amarillo);
             color: var(--color-negro); 
             
@@ -111,25 +111,22 @@
             border-radius: 2rem; 
             
             font-size: 1.1rem;
-            font-weight: 800; /* Un poco más de peso para que resalte */
+            font-weight: 800; 
             text-transform: uppercase;
             text-decoration: none;
-            
-            /* Sombra más sutil adaptada al modo oscuro */
             box-shadow: 0 4px 15px rgba(229, 193, 32, 0.2);
             transition: all 0.3s ease; 
         }
 
         .services__btn:hover {
             transform: translateY(-3px); 
-            /* Sombra amarilla más fuerte al hacer hover */
             box-shadow: 0 6px 20px rgba(229, 193, 32, 0.4); 
-            background-color: var(--color-white); /* Pequeño destello al blanco */
+            background-color: var(--color-white); 
         }
     }
 }
 
-/* ==================== MEDIA QUERIES (SIN CAMBIOS) ==================== */
+
 @media screen and (max-width: 1000px) {
     .services__container {
         display: grid;
@@ -144,7 +141,7 @@
             grid-column: 1/span 2;
             writing-mode: horizontal-tb;
             transform: none;
-            color: var(--color-amarillo); /* En móvil, el título horizontal suele verse mejor en amarillo */
+            color: var(--color-amarillo); 
         }
     }
 }

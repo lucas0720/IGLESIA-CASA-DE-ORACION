@@ -1,9 +1,9 @@
-/* ==================== BOTÓN FLOTANTE ==================== */
+
 .btn-chat {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    z-index: 998; /* Para que flote sobre todo */
+    z-index: 998;
     
     display: flex;
     align-items: center;
@@ -27,10 +27,10 @@
     box-shadow: 0 8px 20px rgba(229, 193, 32, 0.4);
 }
 
-/* ==================== VENTANA DE CHAT ==================== */
+
 .ventana-chat {
     position: fixed;
-    bottom: 6rem; /* Se ubica justo arriba del botón */
+    bottom: 6rem; 
     right: 2rem;
     z-index: 999;
     
@@ -40,21 +40,21 @@
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     overflow: hidden;
     
-    /* ESTADO INICIAL (OCULTO CON ANIMACIÓN) */
+
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px) scale(0.95);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* ESTA CLASE SE AGREGA CON JAVASCRIPT PARA MOSTRARLA */
+
 .ventana-chat.is-active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0) scale(1);
 }
 
-/* --- Cabecera del Chat --- */
+
 .ventana-chat__header {
     background-color: var(--color-gris-oscuro);
     color: var(--color-amarillo);

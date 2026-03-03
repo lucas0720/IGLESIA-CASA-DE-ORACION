@@ -80,9 +80,7 @@
     }
 }
 
-/* =========================================
-   RESPONSIVE (CELULAR)
-   ========================================= */
+
 @media screen and (max-width: 768px) {
     .cdoh__container {
         flex-direction: column;

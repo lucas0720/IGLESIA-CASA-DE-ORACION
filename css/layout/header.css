@@ -1,6 +1,4 @@
-/*==================== HEADER ====================*/
 
-/*color de header tamano y estilos posicion */
 .header{
 
     position: fixed;
@@ -162,12 +160,12 @@
         transform: translateY(0) scale(1);
     }
     30% {
-        transform: translateY(-10px) scale(1.05); /* Sube y se agranda un poco */
+        transform: translateY(-10px) scale(1.05); 
     }
     50% {
-        transform: translateY(0) scale(0.95); /* Cae y se aplasta ligeramente */
+        transform: translateY(0) scale(0.95); 
     }
     70% {
-        transform: translateY(-4px) scale(1.02); /* Rebote pequeño final */
+        transform: translateY(-4px) scale(1.02);
     }
 }

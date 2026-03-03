@@ -294,7 +294,7 @@
 
             <div class="vision__container container">
                 <div>
-                    <h2 class="vision__title">Vision</h2>
+                    <h2 class="vision__title">Visión</h2>
                     <p class="vision__parrafo">Nuestra visión no es un lema, es un llamado a ser una generación que vive con pasión, pureza y propósito mientras esperamos con gozo el regreso de nuestro Rey.</p>
                 </div>
                 <div class="vision__grid">
@@ -446,16 +446,20 @@
         
         <div class="ventana-chat__body">
             <p>Déjanos un mensaje y nos pondremos en contacto contigo.</p>
-            <form id="form-contacto" class="form-contacto">
+            <form id="form-contacto" class="form-contacto" action="https://formspree.io/f/mjgenvdn" method="POST">
+                
                 <div class="form-contacto__group">
-                    <input type="text" id="chat-nombre" placeholder="Tu Nombre" required>
+                    <input name="nombre" type="text" id="chat-nombre" placeholder="Tu Nombre" required >
                 </div>
+                
                 <div class="form-contacto__group">
-                    <input type="email" id="chat-correo" placeholder="Tu Correo" required>
+                    <input name="email" type="email" id="chat-correo" placeholder="Tu Correo" required>
                 </div>
+                
                 <div class="form-contacto__group">
-                    <textarea id="chat-mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    <textarea name="mensaje" id="chat-mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
                 </div>
+                
                 <button type="submit" class="btn-enviar-chat">Enviar Mensaje</button>
             </form>
         </div>
