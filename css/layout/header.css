@@ -21,19 +21,22 @@
     .nav__logo{
         display: flex;
         
-        font-size: 2.3rem;
+        font-size: 2rem;
         font-weight: 800;
         color: var(--color-white);
         text-decoration: none;
 
         .nav__logo-img {
             height: 3rem; 
-            width: auto;
+            width: auto ;
             display: block;
             
-            transform: scale(1.5); 
+            transform: scale(2.8); 
             transform-origin: left center;
-                
+            margin-left: -1rem;
+
+            flex-shrink: 0;
+            object-fit: contain;
         }
     }
     .nav__toggle , .nav__close{
@@ -51,7 +54,7 @@
 /* ==================== MÓVIL (Por defecto) ==================== */
 @media screen and (max-width: 1130px){
     .nav{
-        padding: 0.5rem 3%;
+        padding: 1rem 3%;
     }
     .nav__menu{
         position: fixed;
@@ -132,14 +135,14 @@
             }
 
             .nav__item--Inicio{
-                background-color: var(--color-amarillo);
-                padding: 0.5rem 3rem;
-                border-radius: 0.5rem; 
-                cursor: pointer;
-                transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s;
 
-                
                 .nav__link{
+                    background-color: var(--color-amarillo);
+                    padding: 0.72rem 3rem;
+                    border-radius: 0.5rem; 
+                    cursor: pointer;
+                    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s;
+
                     color: var(--color-negro);
                     font-weight: 600;
                     
@@ -165,3 +168,16 @@
 
 }
 
+
+@keyframes bounce {
+
+    30% {
+        transform: translateY(-10px) scale(1.05); 
+    }
+    50% {
+        transform: translateY(0) scale(0.95); 
+    }
+    70% {
+        transform: translateY(-4px) scale(1.02);
+    }
+}

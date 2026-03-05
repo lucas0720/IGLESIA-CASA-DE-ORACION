@@ -75,9 +75,13 @@
         object-fit: cover; 
         display: block;
         border-radius: 1rem;
-     
+        z-index: 0; 
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
+        
+        filter: brightness(0.75); 
+        transition: filter 0.3s ease;
     }
+
 }
 
 
