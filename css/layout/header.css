@@ -25,8 +25,17 @@
         font-weight: 800;
         color: var(--color-white);
         text-decoration: none;
-    }
 
+        .nav__logo-img {
+            height: 3rem; 
+            width: auto;
+            display: block;
+            
+            transform: scale(1.5); 
+            transform-origin: left center;
+                
+        }
+    }
     .nav__toggle , .nav__close{
         color: var(--color-white);
         cursor: pointer;

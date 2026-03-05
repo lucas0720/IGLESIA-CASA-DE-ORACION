@@ -74,6 +74,7 @@
     flex-direction: column;
     gap: 1.2rem;
     align-items: center; 
+    user-select: text;
 }
 
 .footer__data-item {
